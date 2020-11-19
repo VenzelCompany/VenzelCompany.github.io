@@ -22,10 +22,11 @@ $(document).ready(function () {
     })
     $('.prog').on('click',function () {
         $(this).next().addClass('active')
+        $('.fa-times-circle').on('click',function () {
+        $($click).removeClass('active')
     });
-    $('.fa-times-circle').on('click',function () {
-        $($click).toggleClass('active')
     });
+    
     let options = {
         startAngle: -1.55,
         size: 280,
