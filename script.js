@@ -1,6 +1,6 @@
 $(document).ready(function () {
     var $link = $("a")
-    var $window = $(".ws .prog")
+    var $click = $('.click')
     $link.click(function (e) {
         e.preventDefault();
         var id = $(this).attr('href')
@@ -20,12 +20,11 @@ $(document).ready(function () {
             }
         })
     })
-    var $click = $('.click')
     $('.prog').on('click',function () {
         $(this).next().addClass('active')
     });
     $('.fa-times-circle').on('click',function () {
-        $($click).removeClass('active')
+        $($click).toggleClass('active')
     });
     let options = {
         startAngle: -1.55,
