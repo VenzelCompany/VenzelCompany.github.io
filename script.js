@@ -25,7 +25,6 @@ $(document).ready(function () {
         $(this).next().addClass('active')
     });
     $('.fa-times-circle').on('click',function () {
-        $click
         $($click).removeClass('active')
     });
     let options = {
