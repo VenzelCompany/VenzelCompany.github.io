@@ -20,12 +20,12 @@ $(document).ready(function () {
             }
         })
     })
-    $('.prog').on('click',function () {
+    /*$('.prog').on('click',function () {
         $(this).next().addClass('active')
         $('.fa-times-circle').on('click',function () {
         $($click).removeClass('active')
     });
-    });
+    });*/
     
     let options = {
         startAngle: -1.55,
