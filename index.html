@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/all.css">
   <link rel="stylesheet" href="./css/bootstrap.css">
   <link rel="stylesheet" href="./style.css">
@@ -17,10 +18,10 @@
       <a class="navbar-brand" href="#header">vc</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon">vc</span>
       </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
-        <ul class="navbar-nav">
+      <div class="collapse navbar-collapse justify-content-between" id="navbarNavDropdown">
+        <ul class="navbar-nav m-auto">
           <li class="nav-item">
             <a class="nav-link" href="#ws">Работы/навыки<span class="sr-only">(current)</span></a>
           </li>
@@ -33,7 +34,9 @@
           <li class="nav-item">
             <a class="nav-link" href="#contact">связаться</a>
           </li>
-          <li class="nav-item dropdown d-none">
+        </ul>
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown ">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Русский
@@ -47,79 +50,156 @@
       </div>
     </nav>
   </header>
-  <section class="header d-flex" id="header">
-    <h1>VENZEL <br>
-      COMPANY</h1>
-    <div class="right">
-      <p>Наша компания предоставляет <br>
-        возможности перейти совершенно <br>
-        на новый уровень бизнеса!</p>
-      <p>Так же вы можете обучится у нас и <br>
-        вступить в нашу команду!</p>
-      <button class="btn">
-        <a href="#">подать заявку <i class="fas fa-pencil-alt"></i></a>
-      </button>
+  <section class="header" id="header">
+    <div class="slider">
+      <div class="buttons">
+        <div class="btn-prev">
+          <i class="fas fa-chevron-left"></i>
+        </div>
+        <div class="btn-next">
+          <i class="fas fa-chevron-right"></i>
+        </div>
+      </div>
+      <div class="slider-item active">
+        <h1>
+          <span class="green">V</span>enzel <br>
+          compan<span class="green">Y</span>
+        </h1>
+        <p>
+          Наша компания предоставляет <br>
+          возможности перейти совершенно <br>
+          на новый уровень бизнеса!
+        </p>
+      </div>
+      <div class="slider-item">
+        <h1>
+          создание сайтов
+        </h1>
+        <p>Мы занимаемся созданием сайтов! <br>
+          Как дизайном так и его версткой!</p>
+        <div class="img">
+          <img src="./img/Rectangle 67.png" alt="">
+          <div class="text">
+            <p>Доверьтесь нашей команде <br> специалистов, которые <br>качественно создадут ваш сайт!</p>
+            <button>заказать!</button>
+          </div>
+        </div>
+      </div>
+      <div class="slider-item">
+        <h1>
+          Набор в команду
+        </h1>
+        <p>Нам нужны опытные специалисты своего дела!</p>
+        <div class="img">
+          <img src="./img/Rectangle 68.png" alt="">
+          <div class="text">
+            <p>Нажмите на кнопку и оставте <br> свои контакты по которым мы <br> можем связаться с вами!</p>
+            <button>написать!</button>
+          </div>
+        </div>
+      </div>
+      <div class="navigation">
+        <div class="dot active"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
     </div>
+    <script>
+      var carousel = document.querySelectorAll('.slider .slider-item');
+      var dot = document.querySelectorAll('.navigation .dot');
+      var prev = document.querySelector('.slider .btn-prev');
+      var next = document.querySelector('.slider .btn-next');
+      var i = 0;
+      var n = 
+      
+      next.onclick = function () {
+        carousel[i].classList.remove('active');
+        dot[i].classList.remove('active');
+        i++;
+        if (i>=carousel.length) {
+          i=0
+        };
+        carousel[i].classList.add('active');
+        dot[i].classList.add('active');
+      };
+      prev.onclick = function () {
+        carousel[i].classList.remove('active');
+        dot[i].classList.remove('active');
+        i--;
+        if (i<0) {
+          i=carousel.length-1;
+        };
+        carousel[i].classList.add('active');
+        dot[i].classList.add('active');
+      };
+    </script>
   </section>
   <section class="ws" id="ws">
-    <h3>WORKS/SKILL</h3>
+    <h3><span>WORKS/SKILL</span></h3>
+    <div class="citate">
+      <h2>Venzel Company</h2>
+      <p>Представляет вам работы <br>
+        и уровень навыков<br>
+        своих сотрудников!
+      </p>
+    </div>
     <div class="cont">
       <div class="prog dc">
-        <div class="text">DESIGN/CODING</div>
         <div class="circle">
           <div class="bar"></div>
           <div class="box"><span>80%</span></div>
         </div>
+        <div class="text">DESIGN/CODING</div>
       </div>
       <div class="click">
         <i class="fas fa-times-circle"></i>
       </div>
       <div class="prog copywritting">
-        <div class="text">COPYWRITTING</div>
         <div class="circle">
           <div class="bar"></div>
-          <div class="box"><span>30%</span></div>
+          <div class="box"><span>1%</span></div>
         </div>
+        <div class="text">COPYWRITTING</div>
       </div>
       <div class="click">
         <i class="fas fa-times-circle"></i>
       </div>
       <div class="prog vm">
-        <div class="text">PH/VID MONTAGE</div>
         <div class="circle">
           <div class="bar"></div>
-          <div class="box"><span>80%</span></div>
+          <div class="box"><span>1%</span></div>
         </div>
+        <div class="text">PH/VID MONTAGE</div>
       </div>
       <div class="click">
         <i class="fas fa-times-circle"></i>
       </div>
       <div class="prog education">
-        <div class="text">EDUCATION</div>
         <div class="circle">
           <div class="bar"></div>
-          <div class="box"><span>30%</span></div>
+          <div class="box"><span>20%</span></div>
         </div>
+        <div class="text">EDUCATION</div>
       </div>
       <div class="click">
         <i class="fas fa-times-circle"></i>
       </div>
       <div class="prog uu">
-        <div class="text">UI/UX</div>
         <div class="circle">
           <div class="bar"></div>
-          <div class="box"><span>25%</span></div>
+          <div class="box"><span>30%</span></div>
         </div>
+        <div class="text">UI/UX</div>
       </div>
       <div class="click">
         <i class="fas fa-times-circle"></i>
       </div>
       <div class="prog smm">
-        <div class="text">SMM</div>
         <div class="circle">
           <div class="bar"></div>
           <div class="box"><span>1%</span></div>
         </div>
+        <div class="text">SMM</div>
       </div>
       <div class="click">
         <i class="fas fa-times-circle"></i>
@@ -127,93 +207,94 @@
     </div>
   </section>
   <section class="team" id="team">
-    <h3>TEAM</h3>
+    <h3><span>TEAM</span></h3>
+    <div class="citate">
+      <h2>Venzel Company</h2>
+      <p>Наши сотрудники являются <br>
+        одними из лучших в своём <br>
+        деле! Так что можете не <br>
+        волноваться о вашем
+        заказе!
+      </p>
+    </div>
     <div class="cards">
-      <div class="first">
-        <!-- прописать display-flex и flex-direction 2 < человек в тиме -->
-        <div class="card">
-          <div class="elips"></div>
-          <div class="shadow"></div>
-          <div class="info">
-            <img src="./img/Frame 2.png" alt="">
-            <div class="text">
-              <div class="name">
-                <h4>Ким <br> Вячеслав</h4>
-                <h4>18 лет</h4>
-              </div>
-              <br>
-              <h4>Директор</h4>
+      <div class="card">
+        <div class="info">
+          <img src="./img/Frame 2.png" alt="">
+          <div class="text">
+            <div class="name">
+              <h4>Ким <br> Вячеслав</h4>
+              <h4>18 лет</h4>
             </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="elips"></div>
-          <div class="shadow"></div>
-          <div class="info">
-            <img src="./img/Group 14.png" alt="">
-            <div class="text">
-              <div class="name">
-                <h4>Ким <br> Надежда</h4>
-                <h4>18 лет</h4>
-              </div>
-              <br>
-              <h4>Фото/Видео монтаж</h4>
-            </div>
+            <br>
+            <h4>Разработчик & <br>UI/UX-дизайнер</h4>
           </div>
         </div>
       </div>
-      <div class="second">
-        <div class="card">
-          <div class="elips"></div>
-          <div class="shadow"></div>
-          <div class="info">
-            <img src="./img/Frame 3.png" alt="">
-            <div class="text">
-              <div class="name">
-                <h4>Ворошко <br>Мухаммад</h4>
-                <h4>19 лет</h4>
-              </div>
-              <br>
-              <h4>Веб-дизайнер</h4>
+      <!-- <div class="card">
+        <div class="info">
+          <img src="./img/Group 14.png" alt="">
+          <div class="text">
+            <div class="name">
+              <h4>Ким <br> Надежда</h4>
+              <h4>18 лет</h4>
             </div>
+            <br>
+            <h4>Фото/Видео монтаж</h4>
           </div>
         </div>
-        <div class="card">
-          <div class="elips"></div>
-          <div class="shadow"></div>
-          <div class="info">
-            <img src="./img/Frame 3.png" alt="">
-            <div class="text">
-              <div class="name">
-                <h4>Ворошко <br>Мухаммад</h4>
-                <h4>19 лет</h4>
-              </div>
-              <br>
-              <h4>Веб-дизайнер</h4>
+      </div> -->
+      <div class="card">
+        <div class="info">
+          <img src="./img/Frame 3.png" alt="">
+          <div class="text">
+            <div class="name">
+              <h4>Ворошко <br>Мухаммад</h4>
+              <h4>19 лет</h4>
             </div>
+            <br>
+            <h4>Веб-дизайнер</h4>
           </div>
         </div>
       </div>
-      <h6>Я перестал думать, что работа в <br>команде — это проявление слабости. <br>
-        Напротив, я понял, это требует силы.</h6>
+      <!-- <div class="card">
+        <div class="info">
+          <img src="./img/Frame 3.png" alt="">
+          <div class="text">
+            <div class="name">
+              <h4>Ворошко <br>Мухаммад</h4>
+              <h4>19 лет</h4>
+            </div>
+            <br>
+            <h4>Веб-дизайнер</h4>
+          </div>
+        </div>
+      </div> -->
     </div>
   </section>
   <section class="about" id="about">
-    <h3>ABOUT US</h3>
+    <h3><span>ABOUT US</span></h3>
+    <div class="citate">
+      <h2>Venzel Company</h2>
+      <p>Наша компания развивается <br>
+        с каждым днём! <br>
+        Мы станем лучшими во всем мире!
+      </p>
+    </div>
     <div class="text">
-      <p>Всем доброго времени суток сегодня<br>
+      <p>Всем доброго времени суток сегодня
         хочу представить вам свою компанию! <br>
         В нашей компании есть специалисты всех сфер<br>
         от копирайтеров до програмистов! <br>
         <br>
         Все что вам может понадобится в современном<br>
-        мире вы можете найти у нас на сайте! <br>
+        мире вы можете найти у нас на сайте!
         Так же прошу проявить понимани пока на<br>
-        даный момент кампания находится на<br>
+        даный момент кампания находится на
         стадии развития! <br>
         <br>
         Но наши сотрудники довольно быстро учатся<br>
-        и у нас работают только профисионалы своего<br>
+        и у нас работают только профисионалы своего
         дела! <br>
         И на последок хочу вас порадовать сайт это только<br>
         прототип! Следущий сайт сведет вас с ума!
@@ -221,28 +302,72 @@
     </div>
   </section>
   <section class="contact" id="contact">
-    <h3>CONTACT</h3>
-    <div class="form">
-      <input type="text" placeholder="Имя">
-      <input type="text" placeholder="Телефон">
-      <input class="big" type="text" placeholder="Сообщения отключены">
-      <button class="btn">Отправить</button>
+    <h3><span>CONTACT</span></h3>
+    <div class="citate">
+      <h2>Venzel Company</h2>
+      <p>Тут вы можете на прямую <br>
+        связаться с нами и в течении <br>
+        получаса наши операторы <br>
+        свяжутся с вами!
+      </p>
+    </div>
+    <div class="lank">
+      <form id="form" action="#">
+        <div class="togeher">
+          <div class="ne">
+            <input class="name" name="name" form="form" type="text" placeholder="name">
+            <input class="comun" name="sviyaz" form="form" type="text" placeholder="e-mail or telephone">
+          </div>
+          <div class="btn">
+            <h5>заполните форму</h5>
+            <button form="form">
+              отправить
+            </button>
+          </div>
+        </div>
+        <input class="mess" name="sms" form="form" type="text" placeholder="message">
+      </form>
+      <div class="social">
+        <div class="soc-med net">
+          <div class="sm-th inst">
+            <img src="./img/044-instagram.png" alt="">
+            <h6><a href="https://www.instagram.com/p/CHkQ_SSh0Ye/?utm_source=ig_web_copy_link">перейти по ссылке</a>
+            </h6>
+          </div>
+          <div class="sm-th fb">
+            <img src="./img/024-facebook.png" alt="">
+            <h6>Временно не доступно!</h6>
+          </div>
+          <div class="sm-th vk">
+            <img src="./img/105-VK.png" alt="">
+            <h6>Временно не доступно!</h6>
+          </div>
+        </div>
+        <div class="soc-med tel">
+          <div class="sm-th tg">
+            <img src="./img/090-telegram.png" alt="">
+            <h6><a href="https://t.me/venzellessons">перейти по ссылке</a></h6>
+          </div>
+          <div class="sm-th twiter">
+            <img src="./img/096-twitter.png" alt="">
+            <h6>Временно не доступно!</h6>
+          </div>
+          <div class="sm-th dis">
+            <img src="./img/016-discord.png" alt="">
+            <h6>Временно не доступно!</h6>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
   <footer>
-    <div class="text d-flex">
-      <p>Контактный номер : +9989X-XXX-XX-XX</p>
-      <p>все права защищены©</p>
-    </div>
+    <p>все права защищены©</p>
   </footer>
-  <section>
-
-  </section>
   <script src="./js/jquery-3.5.1.js"></script>
   <script src="./js/popper.js"></script>
   <script src="./js/all.js"></script>
-  <script src="./js/bootstrap.js"></script>
   <script src="./js/progres.js"></script>
+  <script src="./js/bootstrap.js"></script>
   <script src="./script.js"></script>
 </body>
 
